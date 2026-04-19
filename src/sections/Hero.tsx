@@ -1,24 +1,34 @@
-import { useRef } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 import { profile } from '../content/profile';
 import { Button } from '../components/ui/Button';
-import { MorphCanvas } from '../three/MorphCanvas';
+import { HeroSubtitle } from './HeroSubtitle';
+
+const MorphCanvas = lazy(() =>
+  import('../three/MorphCanvas').then((m) => ({ default: m.MorphCanvas }))
+);
 import { useScrollProgress } from '../hooks/useScrollProgress';
 import { usePerformanceTier } from '../hooks/usePerformanceTier';
+import { useFpsDowngrade } from '../hooks/useFpsDowngrade';
+import { useWebGLSupport } from '../hooks/useWebGLSupport';
 import './Hero.css';
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const progress = useScrollProgress(ref);
-  const tier = usePerformanceTier();
+  const initialTier = usePerformanceTier();
+  const tier = useFpsDowngrade(initialTier);
+  const webgl = useWebGLSupport();
 
-  const showFallback = tier === 'reduced-motion';
+  const showFallback = tier === 'reduced-motion' || !webgl;
 
   return (
     <section id="top" className="hero" ref={ref}>
       <div className="hero__sticky">
         {!showFallback && (
           <div className="hero__canvas">
-            <MorphCanvas progress={progress} tier={tier} />
+            <Suspense fallback={null}>
+              <MorphCanvas progress={progress} tier={tier} />
+            </Suspense>
           </div>
         )}
 
@@ -33,19 +43,26 @@ export function Hero() {
 
           {showFallback && (
             <div className="hero__visual">
-              <img
-                src="/assets/portrait.png"
-                alt={`Portrait of ${profile.name}`}
-                className="hero__portrait"
-                width={320}
-                height={320}
-              />
+              <picture>
+                <source
+                  type="image/webp"
+                  srcSet="/assets/portrait-320.webp 320w, /assets/portrait-640.webp 640w, /assets/portrait-960.webp 960w"
+                  sizes="(max-width: 768px) 220px, 340px"
+                />
+                <img
+                  src="/assets/portrait.png"
+                  alt={`Portrait of ${profile.name}`}
+                  className="hero__portrait"
+                  width={320}
+                  height={320}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           )}
 
-          <p className="hero__subtitle">
-            I build delightful products with React, Angular, and a love for the details.
-          </p>
+          <HeroSubtitle progress={progress} />
 
           <div className="hero__cta">
             <Button href="#work" variant="primary">See my work</Button>

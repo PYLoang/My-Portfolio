@@ -1,0 +1,102 @@
+.exp {
+  padding: 100px 24px;
+  background: var(--color-bg-a);
+}
+.exp__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.exp__timeline {
+  position: relative;
+  list-style: none;
+  margin: 60px 0 0;
+  padding: 0;
+}
+.exp__timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-ink);
+  transform: translateX(-50%);
+}
+.exp__event {
+  position: relative;
+  width: 50%;
+  padding: 16px 40px;
+  box-sizing: border-box;
+}
+.exp__event--left {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: right;
+}
+.exp__event--right {
+  margin-left: 50%;
+  text-align: left;
+}
+.exp__dot {
+  position: absolute;
+  top: 28px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent-pink);
+  border: 2px solid var(--color-ink);
+  z-index: 1;
+}
+.exp__event--left .exp__dot { right: -8px; }
+.exp__event--right .exp__dot { left: -8px; }
+.exp__card {
+  background: var(--color-accent-cream);
+  border: 1.5px solid var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-offset);
+  display: inline-block;
+  text-align: left;
+  max-width: 100%;
+}
+.exp__date {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-ink-muted);
+  margin-bottom: 4px;
+}
+.exp__title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: var(--color-ink);
+}
+.exp__sub {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  margin: 0 0 8px;
+}
+.exp__body {
+  font-size: var(--text-sm);
+  margin: 0;
+  line-height: 1.5;
+  color: var(--color-ink);
+}
+
+@media (max-width: 768px) {
+  .exp { padding: 64px 16px; }
+  .exp__timeline::before { left: 12px; }
+  .exp__event,
+  .exp__event--left,
+  .exp__event--right {
+    width: 100%;
+    margin: 0;
+    padding: 12px 0 12px 32px;
+    text-align: left;
+  }
+  .exp__event--left .exp__dot,
+  .exp__event--right .exp__dot { left: 4px; right: auto; }
+}

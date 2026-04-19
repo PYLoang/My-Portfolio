@@ -1,4 +1,5 @@
 import { Canvas } from '@react-three/fiber';
+import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { ParticleField } from './ParticleField';
 import { TIER_CONFIG } from '../hooks/usePerformanceTier';
 import type { PerformanceTier } from '../hooks/usePerformanceTier';
@@ -22,6 +23,11 @@ export function MorphCanvas({ progress, tier }: Props) {
     >
       <ambientLight intensity={0.6} />
       <ParticleField count={config.particles} progress={progress} />
+      {config.bloom && (
+        <EffectComposer>
+          <Bloom intensity={0.6} luminanceThreshold={0.2} luminanceSmoothing={0.4} mipmapBlur />
+        </EffectComposer>
+      )}
     </Canvas>
   );
 }

@@ -1,9 +1,13 @@
+import { Nav } from './components/ui/Nav';
+import { Hero } from './sections/Hero';
+
 export default function App() {
   return (
     <>
       <a href="#main" className="skip-link">Skip to content</a>
-      <main id="main" style={{ minHeight: '100vh', padding: '40px' }}>
-        <h1>Portfolio — scaffold</h1>
+      <Nav />
+      <main id="main">
+        <Hero />
       </main>
     </>
   );

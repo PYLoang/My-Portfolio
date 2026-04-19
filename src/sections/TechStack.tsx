@@ -1,4 +1,5 @@
-import { techStack, TechItem } from '../content/techStack';
+import { techStack } from '../content/techStack';
+import type { TechItem } from '../content/techStack';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import './TechStack.css';
 

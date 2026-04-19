@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
-import { projects, ProjectRole, ProjectTech } from '../content/projects';
+import { projects } from '../content/projects';
+import type { ProjectRole, ProjectTech } from '../content/projects';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Chip } from '../components/ui/Chip';
 import './Projects.css';

@@ -1,4 +1,4 @@
-import { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
+import type { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import './Button.css';
 
 type Variant = 'primary' | 'ghost';

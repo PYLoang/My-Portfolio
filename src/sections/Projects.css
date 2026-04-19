@@ -1,0 +1,130 @@
+.projects {
+  padding: 100px 24px;
+  background: var(--color-bg-b);
+}
+.projects__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.projects__filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.projects__filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.projects__filter-label {
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+  margin-right: 8px;
+  min-width: 50px;
+}
+.projects__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.projects__card {
+  background: var(--color-accent-cream);
+  border: 1.5px solid var(--color-ink);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-offset);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+.projects__card:hover {
+  transform: translate(-2px, -2px);
+}
+.projects__card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.projects__card-name {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--color-ink);
+}
+.projects__card-years {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.projects__card-short {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0;
+}
+.projects__card-tagline {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+.projects__card-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.projects__role-badge {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: var(--color-accent-cream);
+}
+.projects__role-badge--alt {
+  background: var(--color-accent-pink);
+  color: var(--color-ink);
+}
+.projects__card-tech {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.projects__card-tech li {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  padding: 3px 8px;
+  border: 1px solid var(--color-ink-muted);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+}
+.projects__empty {
+  text-align: center;
+  color: var(--color-ink-soft);
+  padding: 40px 0;
+}
+
+@media (max-width: 1024px) {
+  .projects__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .projects { padding: 64px 16px; }
+  .projects__grid { grid-template-columns: 1fr; }
+}

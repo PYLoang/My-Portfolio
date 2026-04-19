@@ -1,6 +1,11 @@
 import { Nav } from './components/ui/Nav';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
+import { TechStack } from './sections/TechStack';
+import { Projects } from './sections/Projects';
+import { Services } from './sections/Services';
+import { Certificates } from './sections/Certificates';
+import { Contact } from './sections/Contact';
 
 export default function App() {
   return (
@@ -10,6 +15,11 @@ export default function App() {
       <main id="main">
         <Hero />
         <About />
+        <TechStack />
+        <Projects />
+        <Services />
+        <Certificates />
+        <Contact />
       </main>
     </>
   );

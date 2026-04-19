@@ -1,0 +1,20 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn--md { font-size: var(--text-sm); padding: 10px 20px; }
+.btn--sm { font-size: var(--text-xs); padding: 6px 14px; }
+.btn--primary { background: var(--color-ink); color: var(--color-accent-cream); box-shadow: var(--shadow-offset-sm); }
+.btn--ghost { background: transparent; color: var(--color-ink); }
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--color-ink); }
+.btn:active { transform: translate(0, 0); box-shadow: 0 0 0 var(--color-ink); }
+.btn--full { width: 100%; justify-content: center; }

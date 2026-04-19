@@ -1,0 +1,102 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 248, 240, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08);
+}
+.nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.nav__brand {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: var(--text-base);
+  letter-spacing: 0.05em;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.nav__links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__links a {
+  color: var(--color-ink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: color 0.15s ease;
+}
+.nav__links a:hover { color: var(--color-accent-pink); }
+
+.nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+}
+.nav__burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-ink);
+  border-radius: 2px;
+}
+
+.nav__drawer {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(160deg, var(--color-bg-a), var(--color-bg-b), var(--color-bg-c));
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.nav__close {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  background: transparent;
+  border: 0;
+  font-size: 40px;
+  line-height: 1;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+.nav__drawer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: center;
+}
+.nav__drawer-links a {
+  color: var(--color-ink);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: var(--text-2xl);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+  .nav__links { display: none; }
+  .nav__burger { display: flex; }
+}

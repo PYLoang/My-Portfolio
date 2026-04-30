@@ -12,7 +12,10 @@
       "Bash(npx tsc *)",
       "Bash(git tag *)",
       "Bash(npm i *)",
-      "Bash(node scripts/optimize-portrait.mjs)"
+      "Bash(node scripts/optimize-portrait.mjs)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5174/)",
+      "Bash(taskkill //F //FI \"WINDOWTITLE eq vite*\")",
+      "Bash(npx vite *)"
     ]
   }
 }

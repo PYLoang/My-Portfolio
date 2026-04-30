@@ -1,0 +1,7 @@
+.anno {
+  pointer-events: none;
+  overflow: visible;
+}
+.anno--blue { stroke: #2b5cff; opacity: 0.85; }
+.anno--red { stroke: #d63a3a; opacity: 0.78; }
+.anno--pencil { stroke: #4a4a4a; opacity: 0.45; }

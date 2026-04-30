@@ -1,6 +1,6 @@
 .certs {
   padding: 100px 24px;
-  background: var(--color-bg-b);
+  background: transparent;
 }
 .certs__inner {
   max-width: 900px;

@@ -1,6 +1,6 @@
 .services {
   padding: 100px 24px;
-  background: var(--color-bg-a);
+  background: transparent;
 }
 .services__inner {
   max-width: 1100px;

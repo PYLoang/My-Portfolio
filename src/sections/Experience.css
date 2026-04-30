@@ -1,6 +1,6 @@
 .exp {
   padding: 100px 24px;
-  background: var(--color-bg-a);
+  background: transparent;
 }
 .exp__inner {
   max-width: 1100px;

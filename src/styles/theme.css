@@ -1,17 +1,21 @@
 :root {
-  /* Warm Playful palette */
-  --color-bg-a: #fff5e1;
-  --color-bg-b: #ffe5b8;
-  --color-bg-c: #ffb8c8;
-  --color-bg-gradient: linear-gradient(135deg, var(--color-bg-a) 0%, var(--color-bg-b) 50%, var(--color-bg-c) 100%);
-  --color-ink: #1a1a1a;
-  --color-ink-soft: #3a3a3a;
-  --color-ink-muted: #6b6b6b;
-  --color-accent-pink: #ff6b8a;
-  --color-accent-blue: #6b8aff;
-  --color-accent-cream: #fff5e1;
-  --color-react: #61dafb;
-  --color-angular: #dd0031;
+  /* Monochrome cool-gray palette with single electric-blue accent */
+  --color-bg-a: #f7f3ea;
+  --color-bg-b: #f7f3ea;
+  --color-bg-c: #efeadc;
+  --color-rule: rgba(43, 92, 255, 0.12);
+  --color-bg-gradient: linear-gradient(180deg, var(--color-bg-a) 0%, var(--color-bg-b) 100%);
+  --color-ink: #0f1115;
+  --color-ink-soft: #2a2e36;
+  --color-ink-muted: #6b7079;
+  --color-accent: #2b5cff;
+  --color-accent-hover: #1d47e0;
+  /* Legacy aliases kept for existing rules; all point to the single accent now */
+  --color-accent-pink: var(--color-accent);
+  --color-accent-blue: var(--color-accent);
+  --color-accent-cream: #ffffff;
+  --color-react: #2b5cff;
+  --color-angular: #2b5cff;
 
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

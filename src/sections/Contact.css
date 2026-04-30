@@ -1,6 +1,6 @@
 .contact {
   padding: 100px 24px 60px;
-  background: linear-gradient(160deg, var(--color-bg-b), var(--color-bg-c));
+  background: transparent;
 }
 .contact__inner {
   max-width: 720px;

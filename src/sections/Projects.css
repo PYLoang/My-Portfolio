@@ -1,6 +1,6 @@
 .projects {
   padding: 100px 24px;
-  background: var(--color-bg-b);
+  background: transparent;
 }
 .projects__inner {
   max-width: 1200px;
@@ -95,8 +95,9 @@
   color: var(--color-accent-cream);
 }
 .projects__role-badge--alt {
-  background: var(--color-accent-pink);
+  background: #f7c8d4;
   color: var(--color-ink);
+  border: 1.5px solid var(--color-ink);
 }
 .projects__card-tech {
   list-style: none;
